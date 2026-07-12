@@ -25,18 +25,19 @@ Works excellently with:
 
 How easy is it?
 
-1. Install the skill (zip upload in Claude Skills, or copy into `.claude/skills/`):
-   Use `itr3-workpaper-skill.zip` (top-level folder: `itr3-workpaper/`)
+1. Clone the repo:
+   git clone https://github.com/Wadhawnaiya/itr3-workpaper.git
 
-2. Install Python deps (for Word/HTML render + schema check):
-   pip install python-docx openpyxl jsonschema
+2. Install dependency:
+   pip install -r requirements.txt
 
-3. Point the AI at the client folder and say:
+3. Install the skill (zip upload in Claude Skills, or copy `skills/itr3-workpaper` into `.claude/skills/`), then point the AI at the client folder and say:
    "Prepare an ITR-3 workpaper for this client for AY 2026-27."
 
 Or try the built-in demo client (Rohan Mehta — synthetic proprietor pack with planted mismatches) and run:
 
 ```
+cd skills/itr3-workpaper
 python3 scripts/render_output.py assets/demo-client/demo_workpaper.json ./output examples/rohan_mehta_efiling_draft.json
 ```
 
@@ -44,6 +45,10 @@ You get three files:
 • `*_itr3_workpaper.docx`
 • `*_itr3_workpaper.html`
 • `*_itr3_efiling_upload.json` (only if it passes the official schema)
+
+🔗 GitHub: https://github.com/Wadhawnaiya/itr3-workpaper
+
+Completely free and open source (MIT license).
 
 This is the same architecture as my tax-audit workpaper skill (Form 3CA/3CB-3CD) — now for pre-filing ITR-3.
 
