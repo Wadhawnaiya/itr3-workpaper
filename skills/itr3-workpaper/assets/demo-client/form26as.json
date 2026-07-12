@@ -1,0 +1,30 @@
+{
+  "pan": "RMEHT1234A",
+  "ay": "2026-27",
+  "tds": [
+    {
+      "section": "192",
+      "tan": "AHMN01234A",
+      "deductor": "Nova Packaging Pvt Ltd",
+      "amount_paid": 420000,
+      "tds": 10000
+    },
+    {
+      "section": "194A",
+      "tan": "AHMH00001B",
+      "deductor": "HDFC Bank",
+      "amount_paid": 24500,
+      "tds": 0
+    }
+  ],
+  "tcs": [],
+  "advance_tax_challans": [
+    {
+      "bsr": "0510308",
+      "date": "2025-12-15",
+      "serial": "01234",
+      "amount": 25000
+    }
+  ],
+  "note": "TDS salary 10000 vs Form16 12000 mismatch planted"
+}

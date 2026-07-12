@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.env.*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Local render outputs (regenerate anytime)
+demo-output/
+/tmp/
+*.log
+
+# Optional: keep zip tracked for easy Claude Skills upload
+# (uncomment next line if zip becomes too large for git)
+# itr3-workpaper-skill.zip

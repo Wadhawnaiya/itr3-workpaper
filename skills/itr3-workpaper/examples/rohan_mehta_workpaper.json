@@ -1,0 +1,505 @@
+{
+  "form_type": "ITR-3",
+  "assessment_year": "2026-27",
+  "schema_ver": "Ver1.0",
+  "client": {
+    "name": "Rohan Mehta",
+    "pan": "RMEHT1234A",
+    "dob": "15-Mar-1988",
+    "status": "Individual",
+    "residential_status": "RES",
+    "tax_regime": "new",
+    "business_name": "Mehta Trading Co.",
+    "previous_year": "01-Apr-2025 to 31-Mar-2026",
+    "assessment_year": "2026-27",
+    "address": "42, Palm Residency, Satellite, Ahmedabad, Gujarat 380015",
+    "email": "rohan.mehta.demo@example.com",
+    "mobile": "9876543210",
+    "draft_label": "Draft \u2014 for CA / taxpayer review before filing"
+  },
+  "sections": [
+    {
+      "id": "Cover",
+      "title": "Client cover & engagement facts",
+      "status": "filled",
+      "answer": "Rohan Mehta, resident individual proprietor (Mehta Trading Co.), AY 2026-27. Tax regime: NEW (client email). Draft for CA review before filing.",
+      "source_refs": [
+        "client_profile.txt"
+      ]
+    },
+    {
+      "id": "PartA_GEN1",
+      "title": "Personal info & filing status",
+      "status": "filled",
+      "answer": "PAN RMEHT1234A; DOB 15-Mar-1988; RES; address Ahmedabad. IncFrmBusOrProf=Y.",
+      "source_refs": [
+        "client_profile.txt"
+      ]
+    },
+    {
+      "id": "PartA_GEN2",
+      "title": "Audit info & nature of business",
+      "status": "judgment",
+      "answer": "Books maintained. Profile claims 44AB not applicable (cash-light). Turnover books 68.5L \u2014 below Rs.1cr standard; GST shows 72L still below. Audit flags N. CA to reconfirm cash % tests.",
+      "source_refs": [
+        "client_profile.txt",
+        "trial_balance.xlsx",
+        "gst_turnover_summary.xlsx"
+      ],
+      "notes": "Do not invent UDIN. LiableSec44ABflg tentatively N."
+    },
+    {
+      "id": "PARTA_BS",
+      "title": "Balance Sheet",
+      "status": "filled",
+      "answer": "Mapped from trial balance capital, liabilities, assets. Closing stock 3,80,000.",
+      "table": [
+        {
+          "side": "FundSrc sample",
+          "item": "Capital (net of drawings concept)",
+          "amount": "850000"
+        },
+        {
+          "side": "FundApply sample",
+          "item": "Stock-in-trade",
+          "amount": "380000"
+        }
+      ],
+      "source_refs": [
+        "trial_balance.xlsx"
+      ]
+    },
+    {
+      "id": "ManufacturingAccount",
+      "title": "ManufacturingAccount",
+      "status": "not_applicable",
+      "answer": "Trading/service proprietor \u2014 no manufacturing activity.",
+      "notes": "Affirmed by nature of business."
+    },
+    {
+      "id": "TradingAccount",
+      "title": "TradingAccount",
+      "status": "filled",
+      "answer": "Trading account from TB: Sales 68,50,000; purchases/stock as per TB.",
+      "source_refs": [
+        "trial_balance.xlsx",
+        "financial_statements.pdf"
+      ]
+    },
+    {
+      "id": "PARTA_PL",
+      "title": "Profit & Loss",
+      "status": "judgment",
+      "answer": "Net profit per books ~6,42,500 before tax adjustments. GST turnover exceeds books sales by 3,50,000 \u2014 possible unrecorded sales.",
+      "source_refs": [
+        "financial_statements.pdf",
+        "gst_turnover_summary.xlsx"
+      ],
+      "notes": "CA to decide turnover for BP after GST reconciliation."
+    },
+    {
+      "id": "PARTA_OI",
+      "title": "PARTA OI",
+      "status": "judgment",
+      "answer": "Cash payment Rs.55,000 on 12-Aug-2025 to Shree Balaji Packaging may attract 40A(3) disallowance if no Rule 6DD exception.",
+      "table": [
+        {
+          "Date": "12-Aug-2025",
+          "Payee": "Shree Balaji Packaging",
+          "Amount": "55000",
+          "Mode": "Cash"
+        }
+      ],
+      "notes": "Flag for CA \u2014 disallowance increases taxable profit if confirmed."
+    },
+    {
+      "id": "PARTA_QD",
+      "title": "PARTA QD",
+      "status": "missing",
+      "answer": "Quantitative details for principal trading items not provided.",
+      "notes": "Obtain stock quantity summary for principal items if required."
+    },
+    {
+      "id": "ScheduleS",
+      "title": "Salary",
+      "status": "filled",
+      "answer": "Gross salary Nova Packaging Pvt Ltd Rs.4,20,000 per Form 16 / AIS.",
+      "table": [
+        {
+          "line": "Gross salary",
+          "amount": "420000"
+        }
+      ],
+      "source_refs": [
+        "form16.pdf",
+        "ais_tis_export.json"
+      ]
+    },
+    {
+      "id": "ScheduleHP",
+      "title": "House property",
+      "status": "judgment",
+      "answer": "Self-occupied flat. Municipal tax paid Rs.12,000 (receipt). Client rough claim Rs.15,000 inconsistent. Home loan interest certificate Rs.2,35,000 \u2014 SOP interest cap Rs.2,00,000 for set-off.",
+      "source_refs": [
+        "house_property_details.txt"
+      ],
+      "notes": "Use paid municipal tax 12,000 only. Interest allowable under SOP subject to cap \u2014 confirm under NEW regime interactions."
+    },
+    {
+      "id": "ITR3ScheduleBP",
+      "title": "Business / profession income",
+      "status": "judgment",
+      "answer": "Start net profit books 6,42,500. Add: possible 40A(3) 55,000; depreciation adjustment (books dep 88,000 vs tax dep TBD). GST vs books turnover gap unresolved.",
+      "source_refs": [
+        "financial_statements.pdf",
+        "trial_balance.xlsx"
+      ],
+      "notes": "Taxable BP not final until dep schedule and disallowances confirmed."
+    },
+    {
+      "id": "ScheduleDPM",
+      "title": "ScheduleDPM",
+      "status": "judgment",
+      "answer": "Computer addition 01-Jan-2026 cost 40,000 put to use <180 days \u2192 half rate for tax depreciation.",
+      "source_refs": [
+        "financial_statements.pdf"
+      ],
+      "notes": "Full tax WDV block schedule incomplete \u2014 need FAR with tax WDV."
+    },
+    {
+      "id": "ScheduleDOA",
+      "title": "ScheduleDOA",
+      "status": "missing",
+      "notes": "Tax WDV register for other assets not provided."
+    },
+    {
+      "id": "ScheduleDEP",
+      "title": "ScheduleDEP",
+      "status": "missing",
+      "notes": "Complete tax depreciation schedule pending FAR."
+    },
+    {
+      "id": "ScheduleDCG",
+      "title": "ScheduleDCG",
+      "status": "not_applicable",
+      "answer": "No disposal of depreciable assets identified."
+    },
+    {
+      "id": "ScheduleESR",
+      "title": "ScheduleESR",
+      "status": "not_applicable",
+      "answer": "No scientific research expenditure identified."
+    },
+    {
+      "id": "ScheduleCG",
+      "title": "Capital gains (general)",
+      "status": "judgment",
+      "answer": "Equity trades present; see 112A. STCG loss PQR Ltd (6,000).",
+      "source_refs": [
+        "capital_gains_statement.xlsx"
+      ]
+    },
+    {
+      "id": "Schedule112A",
+      "title": "Equity LTCG u/s 112A",
+      "status": "missing",
+      "answer": "ABC Ltd gain 65,000 with cost. XYZ Ltd sale 92,000 \u2014 COST OF ACQUISITION MISSING.",
+      "table": [
+        {
+          "Scrip": "ABC Ltd",
+          "Sale": "185000",
+          "Cost": "120000",
+          "Gain": "65000"
+        },
+        {
+          "Scrip": "XYZ Ltd",
+          "Sale": "92000",
+          "Cost": "MISSING",
+          "Gain": "UNKNOWN"
+        }
+      ],
+      "notes": "Do not invent XYZ cost. Obtain broker COA / contract notes."
+    },
+    {
+      "id": "Schedule115AD",
+      "title": "Schedule115AD",
+      "status": "not_applicable",
+      "answer": "Not FII/FPI case."
+    },
+    {
+      "id": "ScheduleVDA",
+      "title": "ScheduleVDA",
+      "status": "not_applicable",
+      "answer": "No VDA trades in documents."
+    },
+    {
+      "id": "ScheduleOS",
+      "title": "ScheduleOS",
+      "status": "judgment",
+      "answer": "Bank interest: adopt AIS 24,500 pending explanation of 6,500 excess over books 18,000. New regime \u2014 80TTA generally not available.",
+      "source_refs": [
+        "ais_tis_export.json",
+        "bank_interest_summary.xlsx"
+      ],
+      "notes": "Reconciliation mismatch \u2014 see reconciliations[]."
+    },
+    {
+      "id": "ScheduleCYLA",
+      "title": "ScheduleCYLA",
+      "status": "judgment",
+      "answer": "STCG loss 6,000 set-off within CG rules; full CYLA grid pending final head incomes."
+    },
+    {
+      "id": "ScheduleBFLA",
+      "title": "ScheduleBFLA",
+      "status": "missing",
+      "answer": "Client claims b/f business loss 45,000 \u2014 prior-year ITR not in folder.",
+      "notes": "Cannot populate BFLA without prior ITR/computation support."
+    },
+    {
+      "id": "ScheduleCFL",
+      "title": "ScheduleCFL",
+      "status": "missing",
+      "notes": "Carry-forward schedule incomplete without prior-year return."
+    },
+    {
+      "id": "ScheduleICDS",
+      "title": "ScheduleICDS",
+      "status": "not_applicable",
+      "answer": "No ICDS adjustments identified from available notes."
+    },
+    {
+      "id": "ScheduleUD",
+      "title": "ScheduleUD",
+      "status": "not_applicable",
+      "answer": "No unabsorbed depreciation claim documented."
+    },
+    {
+      "id": "ScheduleVIA_and_80s",
+      "title": "Chapter VI-A deductions",
+      "status": "judgment",
+      "answer": "Client provided 80C (LIC 45k + ELSS 60k + housing principal 70k) and 80D 22k. Profile elects NEW REGIME \u2014 most VI-A claims not allowable. 80D also lacks policy proof.",
+      "table": [
+        {
+          "Section": "80C LIC",
+          "Amount": "45000",
+          "Allow under new regime?": "No"
+        },
+        {
+          "Section": "80C ELSS",
+          "Amount": "60000",
+          "Allow under new regime?": "No"
+        },
+        {
+          "Section": "80D",
+          "Amount": "22000",
+          "Allow under new regime?": "No; proof missing"
+        }
+      ],
+      "notes": "FLAG conflict: new regime vs deduction folder. Do not claim 80C/80D in e-filing under new regime without Form 10-IEA/old regime evidence."
+    },
+    {
+      "id": "ScheduleAMT",
+      "title": "ScheduleAMT",
+      "status": "not_applicable",
+      "answer": "AMT not indicated for this individual under facts."
+    },
+    {
+      "id": "ScheduleAMTC",
+      "title": "ScheduleAMTC",
+      "status": "not_applicable",
+      "answer": "No AMT credit carry."
+    },
+    {
+      "id": "ScheduleSI",
+      "title": "ScheduleSI",
+      "status": "not_applicable",
+      "answer": "No lottery/special rate OS identified beyond CG special rates."
+    },
+    {
+      "id": "ScheduleSPI",
+      "title": "ScheduleSPI",
+      "status": "not_applicable",
+      "answer": "No clubbing facts."
+    },
+    {
+      "id": "ScheduleIF",
+      "title": "ScheduleIF",
+      "status": "not_applicable",
+      "answer": "Not a partner in any firm per profile."
+    },
+    {
+      "id": "ScheduleEI",
+      "title": "ScheduleEI",
+      "status": "not_applicable",
+      "answer": "No exempt income schedule items identified."
+    },
+    {
+      "id": "SchedulePTI",
+      "title": "SchedulePTI",
+      "status": "not_applicable",
+      "answer": "No pass-through income."
+    },
+    {
+      "id": "ScheduleIT",
+      "title": "ScheduleIT",
+      "status": "missing",
+      "answer": "Advance tax challan 25,000 (15-Dec-2025) in 26AS. Bank shows additional NEFT 15,000 on 20-Mar-2026 without challan copy.",
+      "table": [
+        {
+          "Date": "2025-12-15",
+          "Amount": "25000",
+          "Status": "In 26AS"
+        },
+        {
+          "Date": "2026-03-20",
+          "Amount": "15000",
+          "Status": "Missing challan"
+        }
+      ],
+      "notes": "Obtain challan for 15,000 before claiming."
+    },
+    {
+      "id": "ScheduleTDS1",
+      "title": "ScheduleTDS1",
+      "status": "judgment",
+      "answer": "Salary TDS Form 16 = 12,000; 26AS/AIS = 10,000. Claim credit 10,000 unless Form 16 revised.",
+      "source_refs": [
+        "form16.pdf",
+        "form26as.json",
+        "ais_tis_export.json"
+      ],
+      "notes": "Mismatch planted \u2014 do not claim 12,000 against 26AS 10,000 without support."
+    },
+    {
+      "id": "ScheduleTDS2",
+      "title": "ScheduleTDS2",
+      "status": "not_applicable",
+      "answer": "No non-salary TDS credit material in 26AS (194A TDS 0)."
+    },
+    {
+      "id": "ScheduleTDS3",
+      "title": "ScheduleTDS3",
+      "status": "not_applicable",
+      "answer": "No TDS3 lines."
+    },
+    {
+      "id": "ScheduleTCS",
+      "title": "ScheduleTCS",
+      "status": "not_applicable",
+      "answer": "No TCS; 206C(1H) not applicable FY 2025-26."
+    },
+    {
+      "id": "ScheduleFSI",
+      "title": "ScheduleFSI",
+      "status": "not_applicable",
+      "answer": "No foreign source income."
+    },
+    {
+      "id": "ScheduleTR",
+      "title": "ScheduleTR",
+      "status": "not_applicable",
+      "answer": "No foreign tax credit."
+    },
+    {
+      "id": "ScheduleFA",
+      "title": "Foreign assets",
+      "status": "not_applicable",
+      "answer": "No foreign assets per profile and AIS foreign_assets=[]. Resident \u2014 Schedule FA not required on stated facts.",
+      "notes": "MUST NOT invent foreign assets."
+    },
+    {
+      "id": "ScheduleAL",
+      "title": "ScheduleAL",
+      "status": "judgment",
+      "answer": "Applicability of Schedule AL depends on income threshold. Assets include SO flat, business capital, demat \u2014 values not scheduled. CA to confirm AL requirement after TI finalised.",
+      "notes": "Do not invent jewellery/property valuations."
+    },
+    {
+      "id": "ScheduleGST",
+      "title": "ScheduleGST",
+      "status": "judgment",
+      "answer": "GSTR aggregate taxable outward 72,00,000 vs books sales 68,50,000 (diff 3,50,000).",
+      "source_refs": [
+        "gst_turnover_summary.xlsx"
+      ],
+      "notes": "Reconcile before finalising BP turnover."
+    },
+    {
+      "id": "ScheduleESOP",
+      "title": "ScheduleESOP",
+      "status": "not_applicable",
+      "answer": "No ESOP."
+    },
+    {
+      "id": "Schedule5A",
+      "title": "Schedule5A",
+      "status": "not_applicable",
+      "answer": "Portuguese Civil Code apportionment not applicable."
+    },
+    {
+      "id": "PartB-TI",
+      "title": "Computation of total income",
+      "status": "judgment",
+      "answer": "Illustrative build (not final): Salary 4,20,000 \u2212 std deduction; HP (SOP interest limited); BP provisional; CG incomplete due to XYZ cost; OS interest 24,500; VI-A = 0 under new regime.",
+      "notes": "Arithmetic finalisation after missing costs and GST recon."
+    },
+    {
+      "id": "PartB_TTI",
+      "title": "Tax computation & taxes paid",
+      "status": "judgment",
+      "answer": "Tax under NEW regime slabs on provisional TI. Credits: TDS 10,000 + advance tax 25,000 (+15,000 if challan found). AssetOutIndiaFlag=NO.",
+      "notes": "Interest 234A/B/C not computed \u2014 insufficient instalment certainty."
+    },
+    {
+      "id": "Verification",
+      "title": "Verification",
+      "status": "missing",
+      "answer": "Capacity Self (S). Name/PAN/Father available. Date/Place at filing. DSC/EVC not applied.",
+      "notes": "Never auto-fake verification signature or digest beyond schema placeholder."
+    }
+  ],
+  "reconciliations": [
+    {
+      "item": "Bank interest AIS vs books",
+      "status": "mismatch",
+      "books": 18000,
+      "ais": 24500,
+      "workpaper_amount": 24500,
+      "notes": "AIS higher by 6500 \u2014 obtain explanation / certificates; adopted AIS provisionally."
+    },
+    {
+      "item": "Salary TDS Form 16 vs 26AS/AIS",
+      "status": "mismatch",
+      "form16": 12000,
+      "ais": 10000,
+      "form26as": 10000,
+      "workpaper_amount": 10000,
+      "notes": "Claim credit 10,000 unless Form 16 revised."
+    },
+    {
+      "item": "GST turnover vs books sales",
+      "status": "mismatch",
+      "books": 6850000,
+      "ais": 7200000,
+      "workpaper_amount": 6850000,
+      "notes": "GST 72L vs books 68.5L \u2014 CA recon required. workpaper_amount keeps books pending adjustment."
+    },
+    {
+      "item": "Salary gross Form 16 vs AIS",
+      "status": "matched",
+      "form16": 420000,
+      "ais": 420000,
+      "workpaper_amount": 420000,
+      "notes": "Matched."
+    },
+    {
+      "item": "Tax regime vs Chapter VI-A proofs folder",
+      "status": "mismatch",
+      "books": "80C+80D proofs present",
+      "ais": "Profile: NEW regime",
+      "workpaper_amount": 0,
+      "notes": "Conflict \u2014 do not allow 80C/80D under new regime without election change evidence."
+    }
+  ]
+}

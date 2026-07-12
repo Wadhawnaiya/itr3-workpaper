@@ -1,0 +1,1107 @@
+ITR-3 Main V1.1 — flattened structure dump (major nodes)
+Generated from schema_ITR3.json for field-name lookup.
+========================================================================
+
+## Root
+properties.ITR -> definitions.ITR -> ITR3
+[ITR3] required=['CreationInfo', 'Form_ITR3', 'ITR3ScheduleBP', 'PARTA_BS', 'PARTA_PL', 'PartA_GEN1', 'PartA_GEN2', 'PartB-TI', 'PartB_TTI', 'ScheduleBFLA', 'ScheduleCYLA', 'Verification']
+  * CreationInfo: CreationInfo 
+    [CreationInfo] required=['Digest', 'IntermediaryCity', 'JSONCreatedBy', 'JSONCreationDate', 'SWCreatedBy', 'SWVersionNo']
+      * SWVersionNo: ['maxLength', 'minLength', 'allOf', 'default'] 
+      * SWCreatedBy: ['pattern', 'allOf'] pattern=[S][W][0-9]{8}
+      * JSONCreatedBy: ['pattern', 'allOf'] pattern=[S][W][0-9]{8}
+      * JSONCreationDate: string pattern=([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))
+      * IntermediaryCity: ['maxLength', 'minLength', 'allOf', 'default'] 
+      * Digest: ['pattern', 'allOf'] pattern=-|.{44}
+  * Form_ITR3: Form_ITR3 
+    [Form_ITR3] required=['AssessmentYear', 'Description', 'FormName', 'FormVer', 'SchemaVer']
+      * FormName: enum:['ITR-3'] 
+      * Description: ['maxLength', 'minLength', 'allOf'] 
+      * AssessmentYear: enum:['2026'] 
+      * SchemaVer: ['maxLength', 'minLength', 'pattern', 'allOf'] pattern=Ver1.0
+      * FormVer: ['maxLength', 'minLength', 'pattern', 'allOf'] pattern=Ver1.0
+  * PartA_GEN1: PartA_GEN1 
+    [PartA_GEN1] required=['FilingStatus', 'PersonalInfo']
+      * PersonalInfo: PersonalInfo 
+      * FilingStatus: FilingStatus 
+  * PartA_GEN2: PartA_GEN2 
+    [PartA_GEN2] required=['AuditInfo']
+      * AuditInfo: AuditInfo 
+        NatOfBus: NatOfBus 
+  * PARTA_BS: PARTA_BS 
+    [PARTA_BS] required=['FundApply', 'FundSrc']
+      * FundSrc: object 
+      * FundApply: object 
+        NoBooksOfAccBS: object 
+    ManufacturingAccount: ManufacturingAccount 
+    [ManufacturingAccount] required=['ClosingStock', 'CostOfGoodsPrdcd', 'OpeningInventory']
+      * OpeningInventory: object 
+      * ClosingStock: object 
+      * CostOfGoodsPrdcd: integer 
+    TradingAccount: TradingAccount 
+    [TradingAccount] required=['DirectExpenses', 'OperatingRevenueTotal', 'SalesGrossReceiptsTotal', 'TardingAccTotCred', 'TotRevenueFrmOperations']
+        SaleOfGoods: integer 
+        SaleOfServices: integer 
+        OtherOperatingRevenueDtls: array 
+      * OperatingRevenueTotal: integer 
+      * SalesGrossReceiptsTotal: integer 
+        GrossRcptFromProfession: integer 
+        ExciseCustomsVAT: object 
+      * TotRevenueFrmOperations: integer 
+        ClsngStckOfFinishedStcks: integer 
+      * TardingAccTotCred: integer 
+        OpngStckOfFinishedStcks: integer 
+        Purchases: integer 
+      * DirectExpenses: integer 
+        CarriageInward: integer 
+        PowerAndFuel: integer 
+        OtherIncDtls: array 
+        DirectExpensesTotal: integer 
+        DutyTaxPay: object 
+        GoodsCostPrdcdFrmMA: integer 
+        GrossProfitFrmBusProf: integer 
+        TurnoverIntradayTrd: integer 
+        IncomeIntradayTrd: integer 
+        TurnoverFutureTrd: integer 
+        IncomeFutureTrd: integer 
+  * PARTA_PL: PARTA_PL 
+    [PARTA_PL] required=['CreditsToPL', 'DebitsToPL', 'NetIncomeFrmSpecActivity', 'NoBooksOfAccPL', 'TaxProvAppr', 'TurnverFrmSpecActivity']
+      * CreditsToPL: object 
+      * DebitsToPL: object 
+      * TaxProvAppr: object 
+        NatOfBus44AD: array 
+        PersumptiveInc44AD: object 
+        NatOfBus44ADA: array 
+        PersumptiveInc44ADA: object 
+        NatOfBus44AE: array 
+        GoodsDtlsUs44AE: array 
+        TotalNumOfMonths: integer 
+        TotalPrsumptvIncUs44EGoods: integer 
+        TotalPrsumptvIncUs44E: integer 
+      * NoBooksOfAccPL: object 
+      * TurnverFrmSpecActivity: integer 
+        GrossProfit: integer 
+        Expenditure: integer 
+      * NetIncomeFrmSpecActivity: integer 
+        NonResidentPLDetails: array 
+        NonResidentPL: object 
+    PARTA_OI: PARTA_OI 
+    [PARTA_OI] required=['AmountOfExpDisAllwUs14A', 'AmtDisall43B', 'AmtDisallUs36', 'AmtDisallUs37', 'AmtDisallUs40', 'AmtDisallUs40A', 'AmtDisallUs43BPyNowAll', 'AmtExciseCustomsVATOutstanding', 'ChangeInAcctMethFlg', 'DecProOrIncLossUs145_2', 'DeemedProfUs33ABs', 'InterestDisAllowUs23SMEAct', 'MethodOfAcct', 'NoCredToPLAmt', 'PriorAmtIncCrDrPL', 'ProfDeviatDueAcctMeth', 'ProfTaxAmtUs41', 'ScheduleTPSAFlg']
+      * MethodOfAcct: enum:['MERC', 'CASH'] 
+      * ChangeInAcctMethFlg: enum:['N', 'Y'] 
+      * ProfDeviatDueAcctMeth: integer 
+      * DecProOrIncLossUs145_2: integer 
+        MethodOfValClgStk: object 
+      * NoCredToPLAmt: object 
+      * AmtDisallUs36: object 
+      * AmtDisallUs37: object 
+      * AmtDisallUs40: object 
+      * AmtDisallUs40A: object 
+      * AmtDisallUs43BPyNowAll: object 
+      * AmtDisall43B: object 
+      * AmtExciseCustomsVATOutstanding: object 
+      * DeemedProfUs33ABs: integer 
+        DeemedProfUs33AB: integer 
+        DeemedProfUs33ABA: integer 
+      * ProfTaxAmtUs41: integer 
+      * PriorAmtIncCrDrPL: integer 
+      * AmountOfExpDisAllwUs14A: integer 
+      * InterestDisAllowUs23SMEAct: integer 
+      * ScheduleTPSAFlg: ['pattern', 'allOf', 'default'] pattern=Y|N
+    PARTA_QD: PARTA_QD 
+    [PARTA_QD] required=[]
+        TradingConcern: object 
+        ManfactrConcern: object 
+    ScheduleS: ScheduleS 
+    [ScheduleS] required=['AllwncExtentExemptUs10', 'DeductionUS16', 'DeductionUnderSection16ia', 'EntertainmntalwncUs16ii', 'NetSalary', 'ProfessionalTaxUs16iii', 'TotIncUnderHeadSalaries', 'TotalGrossSalary']
+        Salaries: array 
+      * TotalGrossSalary: integer 
+      * AllwncExtentExemptUs10: integer 
+        AllwncExemptUs10: object 
+        Section10_13A: object 
+        Increliefus89A: integer 
+      * NetSalary: integer 
+      * DeductionUS16: integer 
+      * DeductionUnderSection16ia: integer 
+      * EntertainmntalwncUs16ii: integer 
+      * ProfessionalTaxUs16iii: integer 
+      * TotIncUnderHeadSalaries: integer 
+    ScheduleHP: ScheduleHP 
+    [ScheduleHP] required=['TotalIncomeChargeableUnHP']
+        PropertyDetails: array 
+        PassThroghIncome: integer 
+      * TotalIncomeChargeableUnHP: integer 
+  * ITR3ScheduleBP: ITR3ScheduleBP 
+    [ITR3ScheduleBP] required=['BusSetoffCurrYr', 'BusinessIncOthThanSpec', 'IncChrgUnHdProftGain', 'SpecBusinessInc', 'SpecifiedBusinessInc']
+      * BusinessIncOthThanSpec: object 
+      * SpecBusinessInc: object 
+      * SpecifiedBusinessInc: object 
+      * IncChrgUnHdProftGain: integer 
+      * BusSetoffCurrYr: object 
+    ScheduleDPM: ScheduleDPM 
+    [ScheduleDPM] required=['PlantMachinery']
+      * PlantMachinery: object 
+    ScheduleDOA: ScheduleDOA 
+    [ScheduleDOA] required=[]
+        Land: object 
+        Building: object 
+        FurnitureFittings: object 
+        IntangibleAssets: object 
+        Ships: object 
+    ScheduleDEP: ScheduleDEP 
+    [ScheduleDEP] required=['SummaryFromDeprSch']
+      * SummaryFromDeprSch: SummaryFromDeprSch 
+    ScheduleDCG: ScheduleDCG 
+    [ScheduleDCG] required=['SummaryFromDeprSchCG']
+      * SummaryFromDeprSchCG: SummaryFromDeprSchCG 
+    ScheduleESR: ScheduleESR 
+    [ScheduleESR] required=['DeductionUs35']
+      * DeductionUs35: object 
+    ScheduleCGFor23: ScheduleCGFor23 
+    [ScheduleCGFor23] required=['AccruOrRecOfCG', 'CurrYrLosses', 'DeducClaimInfo', 'IncmFromVDATrnsf', 'LongTermCapGain23', 'ShortTermCapGainFor23', 'SumOfCGIncm', 'TotScheduleCGFor23']
+      * ShortTermCapGainFor23: ShortTermCapGainFor23 
+      * LongTermCapGain23: LongTermCapGain23 
+      * SumOfCGIncm: integer 
+      * IncmFromVDATrnsf: integer 
+      * TotScheduleCGFor23: integer 
+      * DeducClaimInfo: DeducClaimInfo 
+      * CurrYrLosses: CurrYrLosses 
+        EditAutopoulatedDetail: EditAutopoulatedDetail 
+      * AccruOrRecOfCG: AccruOrRecOfCG 
+    Schedule112A: Schedule112A 
+    [Schedule112A] required=['AcquisitionCost112A', 'Balance112A', 'CostAcqWithoutIndx112A', 'Deductions112A', 'ExpExclCnctTransfer112A', 'FairMktValueCapAst112A', 'LTCGBeforelowerB1B2112A', 'SaleValue112A']
+        Schedule112ADtls: array 
+      * SaleValue112A: integer 
+      * CostAcqWithoutIndx112A: integer 
+      * AcquisitionCost112A: integer 
+      * LTCGBeforelowerB1B2112A: integer 
+      * FairMktValueCapAst112A: integer 
+      * ExpExclCnctTransfer112A: integer 
+      * Deductions112A: integer 
+      * Balance112A: integer 
+    Schedule115AD: Schedule115AD 
+    [Schedule115AD] required=['AcquisitionCost115AD', 'Balance115AD', 'CostAcqWithoutIndx115AD', 'Deductions115AD', 'ExpExclCnctTransfer115AD', 'FairMktValueCapAst115AD', 'LTCGBeforelowerB1B2115AD', 'SaleValue115AD']
+        Schedule115ADDtls: array 
+      * SaleValue115AD: integer 
+      * CostAcqWithoutIndx115AD: integer 
+      * AcquisitionCost115AD: integer 
+      * LTCGBeforelowerB1B2115AD: integer 
+      * FairMktValueCapAst115AD: integer 
+      * ExpExclCnctTransfer115AD: integer 
+      * Deductions115AD: integer 
+      * Balance115AD: integer 
+    ScheduleVDA: ScheduleVDA 
+    [ScheduleVDA] required=['ScheduleVDADtls', 'TotIncBusiness', 'TotIncCapGain']
+      * ScheduleVDADtls: array 
+      * TotIncBusiness: integer 
+      * TotIncCapGain: integer 
+    ScheduleOS: ScheduleOS 
+    [ScheduleOS] required=['DividendDTAA', 'DividendIncUs115A1ai', 'DividendIncUs115AC', 'DividendIncUs115ACA', 'DividendIncUs115AD1i', 'DividendIncUs115BBDA', 'DividendIncUs115BBDAaiii', 'IncChargeable', 'IncFrmLottery', 'NOT89A', 'TotOthSrcNoRaceHorse']
+        IncOthThanOwnRaceHorse: object 
+      * TotOthSrcNoRaceHorse: integer 
+        IncFromOwnHorse: object 
+      * IncChargeable: integer 
+      * IncFrmLottery: DateRangeTypeOS 
+        IncFrmOnGames: DateRangeType 
+      * DividendIncUs115BBDA: DateRangeTypeOS 
+      * DividendIncUs115BBDAaiii: DateRangeTypeOS 
+      * DividendIncUs115A1ai: DateRangeTypeOS 
+        DividendIncUs115A1aA: DateRangeType 
+      * DividendIncUs115AC: DateRangeTypeOS 
+      * DividendIncUs115ACA: DateRangeTypeOS 
+      * DividendIncUs115AD1i: DateRangeTypeOS 
+      * NOT89A: DateRangeTypeOS 
+      * DividendDTAA: DateRangeTypeOS 
+  * ScheduleCYLA: ScheduleCYLA 
+    [ScheduleCYLA] required=['LTCG12_5Per', 'LTCGDTAARate', 'LossRemAftSetOff', 'STCG20Per', 'STCG30Per', 'STCGAppRate', 'STCGDTAARate', 'TotalCurYr', 'TotalLossSetOff']
+        Salary: object 
+        HP: object 
+        BusProfExclSpecProf: object 
+        SpeculativeInc: object 
+        SpecifiedInc: object 
+      * STCG20Per: object 
+      * STCG30Per: object 
+      * STCGAppRate: object 
+      * STCGDTAARate: object 
+      * LTCG12_5Per: object 
+      * LTCGDTAARate: object 
+        OthSrcExclRaceHorse: object 
+        OthSrcRaceHorse: object 
+        IncOSDTAA: object 
+      * TotalCurYr: object 
+      * TotalLossSetOff: object 
+      * LossRemAftSetOff: object 
+        EditAutopoulatedDetail: EditAutopoulatedDetail 
+  * ScheduleBFLA: ScheduleBFLA 
+    [ScheduleBFLA] required=['IncomeOfCurrYrAftCYLABFLA', 'LTCG12_5Per', 'LTCGDTAARate', 'STCG20Per', 'STCG30Per', 'STCGAppRate', 'STCGDTAARate', 'Salary', 'TotalBFLossSetOff']
+      * Salary: object 
+        HP: object 
+        BusProfExclSpecProf: object 
+        SpeculativeInc: object 
+        SpecifiedInc: object 
+      * STCG20Per: object 
+      * STCG30Per: object 
+      * STCGAppRate: object 
+      * STCGDTAARate: object 
+      * LTCG12_5Per: object 
+      * LTCGDTAARate: object 
+        OthSrcExclRaceHorse: object 
+        OthSrcRaceHorse: object 
+        IncOSDTAA: object 
+      * TotalBFLossSetOff: object 
+      * IncomeOfCurrYrAftCYLABFLA: integer 
+        EditAutopoulatedDetail: EditAutopoulatedDetail 
+    ScheduleCFL: ScheduleCFL 
+    [ScheduleCFL] required=['TotalLossCFSummary', 'TotalOfBFLossesEarlierYrs']
+        LossCFFromPrev9thYearFromAY: object 
+        LossCFFromPrev8thYearFromAY: object 
+        LossCFFromPrev7thYearFromAY: object 
+        LossCFFromPrev6thYearFromAY: object 
+        LossCFFromPrev5thYearFromAY: object 
+        LossCFFromPrev4thYearFromAY: object 
+        LossCFFromPrev3rdYearFromAY: object 
+        LossCFFromPrev2ndYearFromAY: object 
+        LossCFFromPrevYrToAY: object 
+        LossCFCurrentAssmntYear: object 
+        LossCFCurrentAssmntYear2021: object 
+        LossCFCurrentAssmntYear2022: object 
+        LossCFCurrentAssmntYear2023: object 
+        LossCFCurrentAssmntYear2024: object 
+        LossCFCurrentAssmntYear2025: object 
+        LossCFCurrentAssmntYear2026: object 
+      * TotalOfBFLossesEarlierYrs: object 
+        AdjTotBFLossInBFLA: object 
+        CurrentAYloss: object 
+      * TotalLossCFSummary: object 
+    ITR3ScheduleUD: ITR3ScheduleUD 
+    [ITR3ScheduleUD] required=['CurAllowBalCFNY', 'CurBalCFNY', 'CurrAssYr', 'TotBFUAllowAmt', 'TotBFUDepritAmt', 'TotCurYrAllowSetoffInc', 'TotCurYrdepritSetoffInc', 'TotDepritBalCFNY', 'TotalBalCFNY']
+      * CurrAssYr: enum:['2026-27'] 
+      * CurBalCFNY: integer 
+      * CurAllowBalCFNY: integer 
+        ScheduleUD: array 
+      * TotBFUDepritAmt: integer 
+        TotAdjustAccTax115BACAmt: integer 
+      * TotCurYrdepritSetoffInc: integer 
+      * TotDepritBalCFNY: integer 
+      * TotBFUAllowAmt: integer 
+      * TotCurYrAllowSetoffInc: integer 
+      * TotalBalCFNY: integer 
+    ScheduleICDS: ScheduleICDS 
+    [ScheduleICDS] required=['TotalNetAmtDetl']
+        AccPolicyAmtDetl: ICDSinfo 
+        InventoriesValueDetl: ICDSinfo 
+        ConstContractsAmtDetl: ICDSinfo 
+        RevenueRcgAmtDetl: ICDSinfo 
+        TangibleFixedAssetDetl: ICDSinfo 
+        ForeignExgRatesDetl: ICDSinfo 
+        GovtGrantsDetl: ICDSinfo 
+        SecuritiesDetl: ICDSinfo 
+        BorrowingCostsDetl: ICDSinfo 
+        ProvAssetsDetl: ICDSinfo 
+      * TotalNetAmtDetl: object 
+    Schedule10AA: Schedule10AA 
+    [Schedule10AA] required=['DeductSEZ']
+      * DeductSEZ: object 
+    Schedule80G: Schedule80G 
+    [Schedule80G] required=['TotalDonationsUs80G', 'TotalDonationsUs80GCash', 'TotalDonationsUs80GOtherMode', 'TotalEligibleDonationsUs80G']
+        Don100Percent: object 
+        Don50PercentNoApprReqd: object 
+        Don100PercentApprReqd: object 
+        Don50PercentApprReqd: object 
+      * TotalDonationsUs80GCash: integer 
+      * TotalDonationsUs80GOtherMode: integer 
+      * TotalDonationsUs80G: integer 
+      * TotalEligibleDonationsUs80G: integer 
+    Schedule80GGA: Schedule80GGA 
+    [Schedule80GGA] required=['TotalDonationAmtCash80GGA', 'TotalDonationAmtOtherMode80GGA', 'TotalDonationsUs80GGA', 'TotalEligibleDonationAmt80GGA']
+        DonationDtlsSciRsrchRuralDev: array 
+      * TotalDonationAmtCash80GGA: integer 
+      * TotalDonationAmtOtherMode80GGA: integer 
+      * TotalDonationsUs80GGA: integer 
+      * TotalEligibleDonationAmt80GGA: integer 
+    Schedule80GGC: Schedule80GGC 
+    [Schedule80GGC] required=['TotalDonationAmtCash80GGC', 'TotalDonationAmtOtherMode80GGC', 'TotalDonationsUs80GGC', 'TotalEligibleDonationAmt80GGC']
+        Schedule80GGCDetails: array 
+      * TotalDonationAmtCash80GGC: integer 
+      * TotalDonationAmtOtherMode80GGC: integer 
+      * TotalDonationsUs80GGC: integer 
+      * TotalEligibleDonationAmt80GGC: integer 
+    Schedule80C: Schedule80C 
+    [Schedule80C] required=['Schedule80CDtls', 'TotalAmt']
+      * Schedule80CDtls: array 
+      * TotalAmt: integer 
+    Schedule80D: Schedule80D 
+    [Schedule80D] required=['Sec80DSelfFamSrCtznHealth']
+      * Sec80DSelfFamSrCtznHealth: object 
+    Schedule80DD: Schedule80DD 
+    [Schedule80DD] required=['DeductionAmount', 'DependentType', 'NatureOfDisability', 'TypeOfDisability']
+      * NatureOfDisability: enum:['1', '2'] 
+      * TypeOfDisability: enum:['1', '2'] 
+      * DeductionAmount: integer 
+      * DependentType: enum:['1', '2', '3', '4', '5', '6', '7', '8'] 
+        DependentPan: ['pattern', 'allOf'] pattern=[A-Z]{5}[0-9]{4}[A-Z]
+        DependentAadhaar: ['pattern', 'allOf'] pattern=[0-9]{12}
+        Form10IAFilingDate: string pattern=([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))
+        Form10IAAckNum: string 
+        FormAckNum11A: string 
+        UDIDNum: string 
+    Schedule80U: Schedule80U 
+    [Schedule80U] required=['DeductionAmount', 'NatureOfDisability', 'TypeOfDisability']
+      * NatureOfDisability: enum:['1', '2'] 
+      * TypeOfDisability: enum:['1', '2'] 
+      * DeductionAmount: integer 
+        Form10IAFilingDate: string pattern=([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))
+        Form10IAAckNum: string 
+        FormAckNum11A: string 
+        UDIDNum: string 
+    Schedule80E: Schedule80E 
+    [Schedule80E] required=['Schedule80EDtls', 'TotalInterest80E']
+      * Schedule80EDtls: array 
+      * TotalInterest80E: integer 
+    Schedule80EE: Schedule80EE 
+    [Schedule80EE] required=['Schedule80EEDtls', 'TotalInterest80EE']
+      * Schedule80EEDtls: array 
+      * TotalInterest80EE: integer 
+    Schedule80EEA: Schedule80EEA 
+    [Schedule80EEA] required=['PropStmpDtyVal', 'Schedule80EEADtls', 'TotalInterest80EEA']
+      * PropStmpDtyVal: integer 
+      * Schedule80EEADtls: array 
+      * TotalInterest80EEA: integer 
+    Schedule80EEB: Schedule80EEB 
+    [Schedule80EEB] required=['Schedule80EEBDtls', 'TotalInterest80EEB']
+      * Schedule80EEBDtls: array 
+      * TotalInterest80EEB: integer 
+    Schedule80RA: Schedule80RA 
+    [Schedule80RA] required=['TotalDonationAmtCash80RA', 'TotalDonationAmtOtherMode80RA', 'TotalDonationsUs80RA', 'TotalEligibleDonationAmt80RA']
+        DonationDtlsRsrchAssctn: array 
+      * TotalDonationAmtCash80RA: integer 
+      * TotalDonationAmtOtherMode80RA: integer 
+      * TotalDonationsUs80RA: integer 
+      * TotalEligibleDonationAmt80RA: integer 
+    Schedule80_IA: Schedule80_IA 
+    [Schedule80_IA] required=['DeductUs80_IA_4_iv', 'Sch80SectionCode', 'TotSchedule80_IA']
+      * Sch80SectionCode: ['pattern', 'allOf'] pattern=80-IA
+      * DeductUs80_IA_4_iv: object 
+      * TotSchedule80_IA: integer 
+    Schedule80_IB: Schedule80_IB 
+    [Schedule80_IB] required=['DeductFoodGrainUs80_IB_11A_Und', 'DeductHousUs80_IB_10_Und', 'DeductMinOilUs80_IB_9_Und', 'Sch80SectionCode', 'TotSchedule80_IB']
+      * Sch80SectionCode: ['pattern', 'allOf'] pattern=80-IB
+      * DeductMinOilUs80_IB_9_Und: object 
+      * DeductHousUs80_IB_10_Und: object 
+        DeductFruitVegUs80_IB_11A_Und: object 
+      * DeductFoodGrainUs80_IB_11A_Und: object 
+      * TotSchedule80_IB: integer 
+    Schedule80_IC: Schedule80_IC 
+    [Schedule80_IC] required=['DeductInNorthEast', 'Sch80SectionCode', 'TotSchedule80_IC']
+      * Sch80SectionCode: ['pattern', 'allOf'] pattern=80-IC_IE
+      * DeductInNorthEast: object 
+      * TotSchedule80_IC: integer 
+    ScheduleVIA: ScheduleVIA 
+    [ScheduleVIA] required=['DeductUndChapVIA', 'UsrDeductUndChapVIA']
+      * UsrDeductUndChapVIA: UsrDeductUndChapVIA 
+      * DeductUndChapVIA: DeductUndChapVIA 
+    ScheduleAMT: ScheduleAMT 
+    [ScheduleAMT] required=['AdjustedUnderSec115JC', 'AdjustedUnderSec115JCIFSC', 'AdjustedUnderSec115JCOther', 'AdjustmentSec115JC', 'TaxPayableUnderSec115JC', 'TotalIncItem11']
+      * TotalIncItem11: integer 
+      * AdjustmentSec115JC: AdjustmentSec115JC 
+      * AdjustedUnderSec115JC: integer 
+      * AdjustedUnderSec115JCIFSC: integer 
+      * AdjustedUnderSec115JCOther: integer 
+      * TaxPayableUnderSec115JC: integer 
+    ScheduleAMTC: ScheduleAMTC 
+    [ScheduleAMTC] required=['AmtLiabilityAvailable', 'AmtTaxCreditAvailable', 'CurrYrAmtCreditFwd', 'CurrYrCreditCarryFwd', 'TaxOthProvisions', 'TaxSection115JC', 'TaxSection115JD', 'TotAMTGross', 'TotAmtCreditUtilisedCY', 'TotBalAMTCreditCF', 'TotBalBF', 'TotSetOffEys']
+      * TaxSection115JC: integer 
+      * TaxOthProvisions: integer 
+      * AmtTaxCreditAvailable: integer 
+        ScheduleAMTCDtls: array 
+        CurrAssYr: enum:['2026-27'] 
+      * CurrYrAmtCreditFwd: integer 
+      * CurrYrCreditCarryFwd: integer 
+      * TotAMTGross: integer 
+      * TotSetOffEys: integer 
+      * TotBalBF: integer 
+      * TotAmtCreditUtilisedCY: integer 
+      * TotBalAMTCreditCF: integer 
+      * TaxSection115JD: integer 
+      * AmtLiabilityAvailable: integer 
+    ScheduleSI: ScheduleSI 
+    [ScheduleSI] required=['TotSplRateInc', 'TotSplRateIncTax']
+        SplCodeRateTax: array 
+      * TotSplRateInc: integer 
+      * TotSplRateIncTax: integer 
+        EditAutopoulatedDetail: EditAutopoulatedDetail 
+    ScheduleSPI: ScheduleSPI 
+    [ScheduleSPI] required=[]
+        SpecifiedPerson: array 
+    ScheduleIF: ScheduleIF 
+    [ScheduleIF] required=['TotalFirmCapBalOn31Mar', 'TotalProfitShareAmt']
+        PartnerFirmDetails: array 
+      * TotalProfitShareAmt: integer 
+        TotalIntrstAmtDueOrRecv: integer 
+        TotalRemunernAmtDueOrRecv: integer 
+      * TotalFirmCapBalOn31Mar: integer 
+    ScheduleEI: ScheduleEI 
+    [ScheduleEI] required=['NetAgriIncOrOthrIncRule7', 'TotalExemptInc']
+        InterestInc: integer 
+        GrossAgriRecpt: integer 
+        ExpIncAgri: integer 
+        UnabAgriLossPrev8: integer 
+        AgriIncRule7and8: integer 
+      * NetAgriIncOrOthrIncRule7: integer 
+        ExcNetAgriInc: object 
+        OthersInc: object 
+        Others: integer 
+        IncNotChrgblAsPerDTAA: object 
+        IncChrgblAsPerDTAA: integer 
+        PassThrIncNotChrgblTax: integer 
+      * TotalExemptInc: integer 
+    SchedulePTI: SchedulePTI 
+    [SchedulePTI] required=[]
+        SchedulePTIDtls: array 
+    ScheduleTPSA: ScheduleTPSA 
+    [ScheduleTPSA] required=['AdditionalIncTax18PercAbove', 'AmtPrimaryAdjUs92CE_2A', 'HealthEducationCess', 'NetTaxPayable', 'Surcharge12Perc', 'TaxesPaid', 'TotalAdditionalTax', 'TotalAmountDeposited']
+      * AmtPrimaryAdjUs92CE_2A: integer 
+      * AdditionalIncTax18PercAbove: integer 
+      * Surcharge12Perc: integer 
+      * HealthEducationCess: integer 
+      * TotalAdditionalTax: integer 
+      * TaxesPaid: integer 
+      * NetTaxPayable: integer 
+        DtlsTaxesPaid: array 
+      * TotalAmountDeposited: integer 
+    ScheduleFSI: ScheduleFSI 
+    [ScheduleFSI] required=[]
+        ScheduleFSIDtls: array 
+    ScheduleTR1: ScheduleTR1 
+    [ScheduleTR1] required=['TaxReliefOutsideIndiaDTAA', 'TaxReliefOutsideIndiaNotDTAA', 'TotalTaxPaidOutsideIndia', 'TotalTaxReliefOutsideIndia']
+        ScheduleTR: array 
+      * TotalTaxPaidOutsideIndia: integer 
+      * TotalTaxReliefOutsideIndia: integer 
+      * TaxReliefOutsideIndiaDTAA: integer 
+      * TaxReliefOutsideIndiaNotDTAA: integer 
+        TaxPaidOutsideIndFlg: enum:['YES', 'NO'] 
+        AmtTaxRefunded: integer 
+        AssmtYrTaxRelief: ['description', 'pattern', 'allOf'] pattern=[0-9][0-9][0-9][0-9]-[0-9][0-9]
+    ScheduleFA: ScheduleFA 
+    [ScheduleFA] required=[]
+        DetailsForiegnBank: array 
+        DtlsForeignCustodialAcc: array 
+        DtlsForeignEquityDebtInterest: array 
+        DtlsForeignCashValueInsurance: array 
+        DetailsFinancialInterest: array 
+        DetailsImmovableProperty: array 
+        DetailsOthAssets: array 
+        DetailsOfAccntsHvngSigningAuth: array 
+        DetailsOfTrustOutIndiaTrustee: array 
+        DetailsOfOthSourcesIncOutsideIndia: array 
+    Schedule5A2014: Schedule5A2014 
+    [Schedule5A2014] required=['BusHeadIncome', 'CapGainHeadIncome', 'HPHeadIncome', 'NameOfSpouse', 'OtherSourcesHeadIncome', 'PANOfSpouse', 'TotalHeadIncome']
+      * NameOfSpouse: ['maxLength', 'minLength', 'allOf'] 
+      * PANOfSpouse: ['maxLength', 'minLength', 'pattern', 'allOf'] pattern=[A-Z]{5}[0-9]{4}[A-Z]
+        AadhaarOfSpouse: ['pattern', 'allOf'] pattern=[0-9]{12}
+        BooksSpouse44ABFlg: enum:['Y', 'N'] 
+        BooksSpouse92EFlg: enum:['Y', 'N'] 
+      * HPHeadIncome: Sch5AIncType 
+      * BusHeadIncome: Sch5AIncType 
+      * CapGainHeadIncome: Sch5AIncType 
+      * OtherSourcesHeadIncome: Sch5AIncType 
+      * TotalHeadIncome: Sch5AIncType 
+    ScheduleAL: ScheduleAL 
+    [ScheduleAL] required=['InterstAOPFlag', 'LiabilityInRelatAssets', 'MovableAsset']
+        ImmovableDetails: array 
+      * MovableAsset: MovableAsset 
+      * InterstAOPFlag: enum:['Y', 'N'] 
+        InterestHeldInaAsset: array 
+      * LiabilityInRelatAssets: integer 
+    ScheduleGST: ScheduleGST 
+    [ScheduleGST] required=[]
+        TurnoverGrsRcptForGSTIN: array 
+  * PartB-TI: PartB-TI 
+    [PartB-TI] required=['AggregateIncome', 'BalanceAfterSetoffLosses', 'BroughtFwdLossesSetoff', 'CapGain', 'CurrentYearLoss', 'DeductionsUndSchVIADtl', 'DeductionsUnder10Aor10AA', 'DeemedIncomeUs115JC', 'GrossTotalIncome', 'IncChargeTaxSplRate111A112', 'IncFromOS', 'IncomeFromHP', 'ProfBusGain', 'Salaries', 'TotalIncome', 'TotalTI']
+      * Salaries: integer 
+      * IncomeFromHP: integer 
+      * ProfBusGain: object 
+      * CapGain: CapGain 
+      * IncFromOS: IncFromOS 
+      * TotalTI: integer 
+      * CurrentYearLoss: integer 
+      * BalanceAfterSetoffLosses: integer 
+      * BroughtFwdLossesSetoff: integer 
+      * GrossTotalIncome: integer 
+      * IncChargeTaxSplRate111A112: integer 
+      * DeductionsUndSchVIADtl: object 
+      * DeductionsUnder10Aor10AA: integer 
+      * TotalIncome: integer 
+        IncChargeableTaxSplRates: integer 
+        NetAgricultureIncomeOrOtherIncomeForRate: integer 
+      * AggregateIncome: integer 
+        LossesOfCurrentYearCarriedFwd: integer 
+      * DeemedIncomeUs115JC: integer 
+  * PartB_TTI: PartB_TTI 
+    [PartB_TTI] required=['AssetOutIndiaFlag', 'ComputationOfTaxLiability', 'Refund', 'TaxPaid']
+      * ComputationOfTaxLiability: ComputationOfTaxLiability 
+      * TaxPaid: TaxPaid 
+      * Refund: Refund 
+      * AssetOutIndiaFlag: enum:['YES', 'NO'] 
+    TaxReturnPreparer: TaxReturnPreparer 
+    [TaxReturnPreparer] required=['IdentificationNoOfTRP', 'NameOfTRP']
+      * IdentificationNoOfTRP: ['pattern', 'allOf'] pattern=[T][0-9]{9}|[0-9]{6}
+      * NameOfTRP: ['maxLength', 'minLength', 'allOf'] 
+        ReImbFrmGov: integer 
+    ScheduleIT: ScheduleIT 
+    [ScheduleIT] required=['TotalTaxPayments']
+        TaxPayment: array 
+      * TotalTaxPayments: integer 
+    ScheduleTDS1: ScheduleTDS1 
+    [ScheduleTDS1] required=['TotalTDSonSalaries']
+        TDSonSalary: array 
+      * TotalTDSonSalaries: integer 
+    ScheduleTDS2: ScheduleTDS2 
+    [ScheduleTDS2] required=['TotalTDSonOthThanSals']
+        TDSOthThanSalaryDtls: array 
+      * TotalTDSonOthThanSals: integer 
+    ScheduleTDS3: ScheduleTDS3 
+    [ScheduleTDS3] required=['TotalTDS3OnOthThanSal']
+        TDS3onOthThanSalDtls: array 
+      * TotalTDS3OnOthThanSal: integer 
+    ScheduleTCS: ScheduleTCS 
+    [ScheduleTCS] required=['TotalSchTCS']
+        TCS: array 
+      * TotalSchTCS: integer 
+  * Verification: Verification 
+    [Verification] required=['Capacity', 'Date', 'Declaration', 'Place']
+      * Declaration: object 
+      * Capacity: string 
+      * Date: string pattern=([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))
+      * Place: ['maxLength', 'minLength', 'allOf'] 
+    ScheduleESOP: ScheduleESOP 
+    [ScheduleESOP] required=['TotalTaxAttributedAmt']
+        PanofStartUp: ['pattern', 'allOf'] pattern=[A-Z]{5}[0-9]{4}[A-Z]
+        DPIITRegNo: string pattern=DIPP[0-9]{3,5}
+        ScheduleESOP2122_Type: object 
+        ScheduleESOP2223_Type: object 
+        ScheduleESOP2324_Type: object 
+        ScheduleESOP2425_Type: object 
+        ScheduleESOP2526_Type: object 
+        ScheduleESOP2627_Type: object 
+      * TotalTaxAttributedAmt: integer 
+
+## CreationInfo
+[CreationInfo] required=['Digest', 'IntermediaryCity', 'JSONCreatedBy', 'JSONCreationDate', 'SWCreatedBy', 'SWVersionNo']
+  * SWVersionNo: ['maxLength', 'minLength', 'allOf', 'default'] 
+  * SWCreatedBy: ['pattern', 'allOf'] pattern=[S][W][0-9]{8}
+  * JSONCreatedBy: ['pattern', 'allOf'] pattern=[S][W][0-9]{8}
+  * JSONCreationDate: string pattern=([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))
+  * IntermediaryCity: ['maxLength', 'minLength', 'allOf', 'default'] 
+  * Digest: ['pattern', 'allOf'] pattern=-|.{44}
+
+## Form_ITR3
+[Form_ITR3] required=['AssessmentYear', 'Description', 'FormName', 'FormVer', 'SchemaVer']
+  * FormName: enum:['ITR-3'] 
+  * Description: ['maxLength', 'minLength', 'allOf'] 
+  * AssessmentYear: enum:['2026'] 
+  * SchemaVer: ['maxLength', 'minLength', 'pattern', 'allOf'] pattern=Ver1.0
+  * FormVer: ['maxLength', 'minLength', 'pattern', 'allOf'] pattern=Ver1.0
+
+## PartA_GEN1
+[PartA_GEN1] required=['FilingStatus', 'PersonalInfo']
+  * PersonalInfo: PersonalInfo 
+    [PersonalInfo] required=['Address', 'AssesseeName', 'DOB', 'PAN', 'SecondaryAdd', 'Status']
+      * AssesseeName: AssesseeName 
+      * PAN: ['pattern', 'allOf'] pattern=[A-Z]{5}[0-9]{4}[A-Z]
+      * Address: Address 
+      * SecondaryAdd: string 
+        AlternateAddress: AlternateAddress 
+      * DOB: string pattern=([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))
+      * Status: string 
+        DateofBusCommencement: string pattern=([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))
+        AadhaarCardNo: ['pattern', 'allOf'] pattern=[0-9]{12}
+  * FilingStatus: FilingStatus 
+    [FilingStatus] required=['FiiFpiFlag', 'ForeignExchangeFlag', 'HeldUnlistedEqShrPrYrFlg', 'IncFrmBusOrProf', 'ItrFilingDueDate', 'ResidentialStatus', 'ReturnFileSec', 'SeventhProvisio139']
+      * ReturnFileSec: integer 
+      * IncFrmBusOrProf: string 
+        Form10IEAEarlierAYOldRegime: string 
+        Form10IEAAssYear: string 
+        Form10IEAEarlierAYAckOldRegime: integer 
+        F10IEAEarlierAYNewRegime: string 
+        AssYrF10IEANewTaxReg: string 
+        Form10IEAEarlierAYAckNewRegime: integer 
+        F10IEACurrAYNewRegime: string 
+        F10IEADateCurrAYNewTax: string pattern=([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))
+        F10IEAAckNoCurrAYNewTax: integer 
+        F10IEACurrAYOldRegime: string 
+        F10IEADateCurrAYOldTax: string pattern=([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))
+        F10IEAAckNoCurrAYOldTax: integer 
+        OptOldRegimeCurrAY: string 
+      * SeventhProvisio139: ['pattern', 'allOf'] pattern=Y|N
+        DepAmtAggAmtExcd1CrPrYrFlg: ['pattern', 'allOf'] pattern=Y|N
+        AmtSeventhProvisio139i: integer 
+        IncrExpAggAmt2LkTrvFrgnCntryFlg: ['pattern', 'allOf'] pattern=Y|N
+        AmtSeventhProvisio139ii: integer 
+        IncrExpAggAmt1LkElctrctyPrYrFlg: ['pattern', 'allOf'] pattern=Y|N
+        AmtSeventhProvisio139iii: integer 
+        clauseiv7provisio139i: ['pattern', 'allOf'] pattern=Y|N
+        clauseiv7provisio139iDtls: array 
+        NoticeNo: ['maxLength', 'allOf'] 
+        NoticeDate: string pattern=([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))
+        ReceiptNo: string pattern=[0-9]{15}
+        OrigRetFiledDate: string pattern=([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))
+      * ResidentialStatus: enum:['RES', 'NRI', 'NOR'] 
+        ConditionsResStatus: enum:['1', '2', '3', '4', '5', '6', '7', '8', '9'] 
+        JurisdictionResPrevYr: object 
+        TotalPrStayIndiaPrevYr: integer 
+        TotalPrStayIndia4PrecYr: integer 
+        BenefitUs115HFlg: enum:['Y', 'N'] 
+        PortugeseCC5A: enum:['Y', 'N'] 
+        AsseseeRepFlg: enum:['Y', 'N'] 
+        AssesseeRep: AssesseeRep 
+        CompDirectorPrvYrFlg: enum:['Y', 'N'] 
+        CompDirectorPrvYr: object 
+        PartnerInFirmFlg: enum:['Y', 'N'] 
+        PartnerInFirm: object 
+      * HeldUnlistedEqShrPrYrFlg: enum:['Y', 'N'] 
+        HeldUnlistedEqShrPrYr: object 
+        NriPEinIndia: enum:['Y', 'N'] 
+        NriSEPinIndia: enum:['Y', 'N', 'NA'] 
+        AggrPaymentTransac: number 
+        NumberOfUsers: number 
+      * ForeignExchangeFlag: enum:['Y', 'N'] 
+      * FiiFpiFlag: enum:['Y', 'N'] 
+        SebiRegnNo: ['description', 'pattern', 'allOf'] pattern=IN[a-zA-Z]{2}FP[0-9]{6}
+      * ItrFilingDueDate: enum:['2026-08-31', '2026-10-31', '2026-11-30'] 
+        LEIDtls: object 
+
+## PartA_GEN2
+[PartA_GEN2] required=['AuditInfo']
+  * AuditInfo: AuditInfo 
+    [AuditInfo] required=['AccountAuditFlag', 'IncDclrdUs', 'LiableSec44AAflg', 'LiableSec44ABflg', 'LiableSec92Eflg']
+      * LiableSec44AAflg: ['pattern', 'allOf', 'default'] pattern=N|Y
+      * IncDclrdUs: ['pattern', 'allOf', 'default'] pattern=N|Y
+        TotalSalesExcOneCr: enum:['Upto1CR', 'Upto10CR', 'MoreThan10CR'] 
+        AgrOFAllAmtsRcvd: enum:['Upto5Per', 'MoreThan5Per'] 
+        AgrOFAllPayMade: enum:['Upto5Per', 'MoreThan5Per'] 
+      * LiableSec44ABflg: ['pattern', 'allOf', 'default'] pattern=N|Y
+        Cndnfor44AB: string 
+        BiiDetails: object 
+        AuditAccountantFlg: ['pattern', 'allOf'] pattern=N|Y
+        AuditReportFurnishDate: string pattern=([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))
+        AckNum44AB: integer pattern=[0-9]{15}
+        AudFrmName: ['maxLength', 'allOf'] 
+        AudFrmPAN: ['description', 'pattern', 'allOf'] pattern=[A-Z]{5}[0-9]{4}[A-Z]
+        AudFrmAadhaar: ['pattern', 'allOf'] pattern=[0-9]{12}
+      * LiableSec92Eflg: enum:['N', 'Y'] 
+      * AccountAuditFlag: enum:['N', 'Y'] 
+        AuditDetails92E: AuditDetails92E 
+        AuditDetails: array 
+        AuditReportDetails: array 
+    NatOfBus: NatOfBus 
+    [NatOfBus] required=[]
+        NatureOfBusiness: array 
+
+## PARTA_BS
+[PARTA_BS] required=['FundApply', 'FundSrc']
+  * FundSrc: object 
+  * FundApply: object 
+    NoBooksOfAccBS: object 
+
+## PARTA_PL
+[PARTA_PL] required=['CreditsToPL', 'DebitsToPL', 'NetIncomeFrmSpecActivity', 'NoBooksOfAccPL', 'TaxProvAppr', 'TurnverFrmSpecActivity']
+  * CreditsToPL: object 
+  * DebitsToPL: object 
+  * TaxProvAppr: object 
+    NatOfBus44AD: array 
+    PersumptiveInc44AD: object 
+    NatOfBus44ADA: array 
+    PersumptiveInc44ADA: object 
+    NatOfBus44AE: array 
+    GoodsDtlsUs44AE: array 
+    TotalNumOfMonths: integer 
+    TotalPrsumptvIncUs44EGoods: integer 
+    TotalPrsumptvIncUs44E: integer 
+  * NoBooksOfAccPL: object 
+  * TurnverFrmSpecActivity: integer 
+    GrossProfit: integer 
+    Expenditure: integer 
+  * NetIncomeFrmSpecActivity: integer 
+    NonResidentPLDetails: array 
+    NonResidentPL: object 
+
+## ITR3ScheduleBP
+[ITR3ScheduleBP] required=['BusSetoffCurrYr', 'BusinessIncOthThanSpec', 'IncChrgUnHdProftGain', 'SpecBusinessInc', 'SpecifiedBusinessInc']
+  * BusinessIncOthThanSpec: object 
+  * SpecBusinessInc: object 
+  * SpecifiedBusinessInc: object 
+  * IncChrgUnHdProftGain: integer 
+  * BusSetoffCurrYr: object 
+
+## ScheduleCYLA
+[ScheduleCYLA] required=['LTCG12_5Per', 'LTCGDTAARate', 'LossRemAftSetOff', 'STCG20Per', 'STCG30Per', 'STCGAppRate', 'STCGDTAARate', 'TotalCurYr', 'TotalLossSetOff']
+    Salary: object 
+    HP: object 
+    BusProfExclSpecProf: object 
+    SpeculativeInc: object 
+    SpecifiedInc: object 
+  * STCG20Per: object 
+  * STCG30Per: object 
+  * STCGAppRate: object 
+  * STCGDTAARate: object 
+  * LTCG12_5Per: object 
+  * LTCGDTAARate: object 
+    OthSrcExclRaceHorse: object 
+    OthSrcRaceHorse: object 
+    IncOSDTAA: object 
+  * TotalCurYr: object 
+  * TotalLossSetOff: object 
+  * LossRemAftSetOff: object 
+    EditAutopoulatedDetail: EditAutopoulatedDetail 
+    [EditAutopoulatedDetail] required=[]
+
+## ScheduleBFLA
+[ScheduleBFLA] required=['IncomeOfCurrYrAftCYLABFLA', 'LTCG12_5Per', 'LTCGDTAARate', 'STCG20Per', 'STCG30Per', 'STCGAppRate', 'STCGDTAARate', 'Salary', 'TotalBFLossSetOff']
+  * Salary: object 
+    HP: object 
+    BusProfExclSpecProf: object 
+    SpeculativeInc: object 
+    SpecifiedInc: object 
+  * STCG20Per: object 
+  * STCG30Per: object 
+  * STCGAppRate: object 
+  * STCGDTAARate: object 
+  * LTCG12_5Per: object 
+  * LTCGDTAARate: object 
+    OthSrcExclRaceHorse: object 
+    OthSrcRaceHorse: object 
+    IncOSDTAA: object 
+  * TotalBFLossSetOff: object 
+  * IncomeOfCurrYrAftCYLABFLA: integer 
+    EditAutopoulatedDetail: EditAutopoulatedDetail 
+    [EditAutopoulatedDetail] required=[]
+
+## PartB-TI
+[PartB-TI] required=['AggregateIncome', 'BalanceAfterSetoffLosses', 'BroughtFwdLossesSetoff', 'CapGain', 'CurrentYearLoss', 'DeductionsUndSchVIADtl', 'DeductionsUnder10Aor10AA', 'DeemedIncomeUs115JC', 'GrossTotalIncome', 'IncChargeTaxSplRate111A112', 'IncFromOS', 'IncomeFromHP', 'ProfBusGain', 'Salaries', 'TotalIncome', 'TotalTI']
+  * Salaries: integer 
+  * IncomeFromHP: integer 
+  * ProfBusGain: object 
+  * CapGain: CapGain 
+    [CapGain] required=['CapGains30Per115BBH', 'LongTerm', 'ShortTerm', 'ShortTermLongTermTotal', 'TotalCapGains']
+      * ShortTerm: ShortTerm 
+      * LongTerm: LongTerm 
+      * ShortTermLongTermTotal: integer 
+      * CapGains30Per115BBH: integer 
+      * TotalCapGains: integer 
+  * IncFromOS: IncFromOS 
+    [IncFromOS] required=['FromOwnRaceHorse', 'IncChargblSplRate', 'OtherSrcThanOwnRaceHorse', 'TotIncFromOS']
+      * OtherSrcThanOwnRaceHorse: integer 
+      * IncChargblSplRate: integer 
+      * FromOwnRaceHorse: integer 
+      * TotIncFromOS: integer 
+  * TotalTI: integer 
+  * CurrentYearLoss: integer 
+  * BalanceAfterSetoffLosses: integer 
+  * BroughtFwdLossesSetoff: integer 
+  * GrossTotalIncome: integer 
+  * IncChargeTaxSplRate111A112: integer 
+  * DeductionsUndSchVIADtl: object 
+  * DeductionsUnder10Aor10AA: integer 
+  * TotalIncome: integer 
+    IncChargeableTaxSplRates: integer 
+    NetAgricultureIncomeOrOtherIncomeForRate: integer 
+  * AggregateIncome: integer 
+    LossesOfCurrentYearCarriedFwd: integer 
+  * DeemedIncomeUs115JC: integer 
+
+## PartB_TTI
+[PartB_TTI] required=['AssetOutIndiaFlag', 'ComputationOfTaxLiability', 'Refund', 'TaxPaid']
+  * ComputationOfTaxLiability: ComputationOfTaxLiability 
+    [ComputationOfTaxLiability] required=['AggregateTaxInterestLiability', 'CreditUS115JD', 'GrossTaxPayable', 'IntrstPay', 'NetTaxLiability', 'TaxPayAfterCreditUs115JD', 'TaxPayableOnDeemedTI', 'TaxPayableOnTI']
+      * TaxPayableOnDeemedTI: object 
+      * TaxPayableOnTI: TaxPayableOnTI 
+      * GrossTaxPayable: integer 
+        GrossTaxPay: GrossTaxPay 
+      * CreditUS115JD: integer 
+      * TaxPayAfterCreditUs115JD: integer 
+        TaxRelief: TaxRelief 
+      * NetTaxLiability: integer 
+      * IntrstPay: IntrstPay 
+      * AggregateTaxInterestLiability: integer 
+  * TaxPaid: TaxPaid 
+    [TaxPaid] required=['TaxesPaid']
+      * TaxesPaid: TaxesPaid 
+        BalTaxPayable: integer 
+  * Refund: Refund 
+    [Refund] required=['BankAccountDtls', 'RefundDue']
+      * RefundDue: integer 
+      * BankAccountDtls: BankAccountDtls 
+  * AssetOutIndiaFlag: enum:['YES', 'NO'] 
+
+## Verification
+[Verification] required=['Capacity', 'Date', 'Declaration', 'Place']
+  * Declaration: object 
+  * Capacity: string 
+  * Date: string pattern=([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))
+  * Place: ['maxLength', 'minLength', 'allOf'] 
+
+## ScheduleS
+[ScheduleS] required=['AllwncExtentExemptUs10', 'DeductionUS16', 'DeductionUnderSection16ia', 'EntertainmntalwncUs16ii', 'NetSalary', 'ProfessionalTaxUs16iii', 'TotIncUnderHeadSalaries', 'TotalGrossSalary']
+    Salaries: array 
+  * TotalGrossSalary: integer 
+  * AllwncExtentExemptUs10: integer 
+    AllwncExemptUs10: object 
+    Section10_13A: object 
+    Increliefus89A: integer 
+  * NetSalary: integer 
+  * DeductionUS16: integer 
+  * DeductionUnderSection16ia: integer 
+  * EntertainmntalwncUs16ii: integer 
+  * ProfessionalTaxUs16iii: integer 
+  * TotIncUnderHeadSalaries: integer 
+
+## ScheduleHP
+[ScheduleHP] required=['TotalIncomeChargeableUnHP']
+    PropertyDetails: array 
+    PassThroghIncome: integer 
+  * TotalIncomeChargeableUnHP: integer 
+
+## ScheduleCGFor23
+[ScheduleCGFor23] required=['AccruOrRecOfCG', 'CurrYrLosses', 'DeducClaimInfo', 'IncmFromVDATrnsf', 'LongTermCapGain23', 'ShortTermCapGainFor23', 'SumOfCGIncm', 'TotScheduleCGFor23']
+  * ShortTermCapGainFor23: ShortTermCapGainFor23 
+    [ShortTermCapGainFor23] required=['NRISecur115AD', 'NRITransacSec48Dtl', 'PassThrIncNatureSTCG', 'SaleOnOtherAssets', 'SlumpSaleInStcg', 'TotalAmtDeemedStcg', 'TotalAmtNotTaxUsDTAAStcg', 'TotalAmtTaxUsDTAAStcg', 'TotalSTCG']
+        SaleofLandBuild: object 
+      * SlumpSaleInStcg: object 
+        EquityMFonSTT: array 
+      * NRITransacSec48Dtl: object 
+      * NRISecur115AD: EquityOrUnitSec94Type 
+      * SaleOnOtherAssets: object 
+        UnutilizedStcgFlag: enum:['Y', 'N', 'X'] 
+        UnutilizedCg: UnutilizedCgPrvYrStcg 
+        AmtDeemedStcg: integer 
+      * TotalAmtDeemedStcg: integer 
+      * PassThrIncNatureSTCG: integer 
+        PassThrIncNatureSTCG20Per: integer 
+        PassThrIncNatureSTCG30Per: integer 
+        PassThrIncNatureSTCGAppRate: integer 
+        NRICgDTAA: NRITaxUsDTAAStcgType 
+      * TotalAmtNotTaxUsDTAAStcg: integer 
+      * TotalAmtTaxUsDTAAStcg: integer 
+        CapitalLossBuyBackShares: object 
+      * TotalSTCG: integer 
+  * LongTermCapGain23: LongTermCapGain23 
+    [LongTermCapGain23] required=['NRISaleOfEquityShareUs112A', 'NRISaleofForeignAsset', 'PassThrIncNatureLTCG', 'SaleOfEquityShareUs112A', 'SaleofAssetNADtls', 'SlumpSaleInLtcgDtls', 'TotalAmtDeemedLtcg', 'TotalAmtNotTaxUsDTAALtcg', 'TotalAmtTaxUsDTAALtcg', 'TotalLTCG']
+        SaleofLandBuild: object 
+      * SlumpSaleInLtcgDtls: object 
+        Proviso112Applicable: array 
+      * SaleOfEquityShareUs112A: EquityShareUs112A 
+        NRIProvisoSec48: NRIProvisoSec48 
+        NRIOnSec112and115: object 
+      * NRISaleOfEquityShareUs112A: EquityShareUs112A 
+      * NRISaleofForeignAsset: NRISaleofForeignAsset 
+      * SaleofAssetNADtls: object 
+        UnutilizedLtcgFlag: enum:['Y', 'N', 'X'] 
+        UnutilizedCg: UnutilizedCgPrvYrLtcg 
+        AmtDeemedLtcg: integer 
+      * TotalAmtDeemedLtcg: integer 
+      * PassThrIncNatureLTCG: integer 
+        PassThrIncNatureLTCGUs112A12_5Per: integer 
+        PassThrIncNatureLTCG12_5Per: integer 
+        NRICgDTAA: NRITaxUsDTAALtcgType 
+      * TotalAmtNotTaxUsDTAALtcg: integer 
+      * TotalAmtTaxUsDTAALtcg: integer 
+        CapitalLossBuyBackShares: object 
+      * TotalLTCG: integer 
+  * SumOfCGIncm: integer 
+  * IncmFromVDATrnsf: integer 
+  * TotScheduleCGFor23: integer 
+  * DeducClaimInfo: DeducClaimInfo 
+    [DeducClaimInfo] required=['TotDeductClaim']
+        DeducClaimDtlsUs54: array 
+        DeducClaimDtlsUs54B: array 
+        DeducClaimDtlsUs54D: array 
+        DeducClaimDtlsUs54EC: array 
+        DeducClaimDtlsUs54F: array 
+        DeducClaimDtlsUs54G: array 
+        DeducClaimDtlsUs54GA: array 
+        DeducClaimDtlsUs115F: array 
+      * TotDeductClaim: integer 
+  * CurrYrLosses: CurrYrLosses 
+    [CurrYrLosses] required=['InLossSetOff', 'InLtcg12_5Per', 'InLtcgDTAARate', 'InStcg20Per', 'InStcg30Per', 'InStcgAppRate', 'InStcgDTAARate', 'LossRemainSetOff', 'TotLossSetOff']
+      * InLossSetOff: InLossSetOff 
+      * InStcg20Per: InStcg20Per 
+      * InStcg30Per: InStcg30Per 
+      * InStcgAppRate: InStcgAppRate 
+      * InStcgDTAARate: InStcgDTAARate 
+      * InLtcg12_5Per: InLtcg12_5Per 
+      * InLtcgDTAARate: InLtcgDTAARate 
+      * TotLossSetOff: TotLossSetOff 
+      * LossRemainSetOff: LossRemainSetOff 
+    EditAutopoulatedDetail: EditAutopoulatedDetail 
+    [EditAutopoulatedDetail] required=[]
+  * AccruOrRecOfCG: AccruOrRecOfCG 
+    [AccruOrRecOfCG] required=['LongTermUnder12_5Per', 'LongTermUnderDTAARate', 'ShortTermUnder20Per', 'ShortTermUnder30Per', 'ShortTermUnderAppRate', 'ShortTermUnderDTAARate', 'VDATrnsfGainsUnder30Per']
+      * ShortTermUnder20Per: DateRangeType 
+      * ShortTermUnder30Per: DateRangeType 
+      * ShortTermUnderAppRate: DateRangeType 
+      * ShortTermUnderDTAARate: DateRangeType 
+      * LongTermUnder12_5Per: DateRangeType 
+      * LongTermUnderDTAARate: DateRangeType 
+      * VDATrnsfGainsUnder30Per: DateRangeType 
+
+## ScheduleOS
+[ScheduleOS] required=['DividendDTAA', 'DividendIncUs115A1ai', 'DividendIncUs115AC', 'DividendIncUs115ACA', 'DividendIncUs115AD1i', 'DividendIncUs115BBDA', 'DividendIncUs115BBDAaiii', 'IncChargeable', 'IncFrmLottery', 'NOT89A', 'TotOthSrcNoRaceHorse']
+    IncOthThanOwnRaceHorse: object 
+  * TotOthSrcNoRaceHorse: integer 
+    IncFromOwnHorse: object 
+  * IncChargeable: integer 
+  * IncFrmLottery: DateRangeTypeOS 
+    [DateRangeTypeOS] required=['DateRange']
+      * DateRange: object 
+    IncFrmOnGames: DateRangeType 
+    [DateRangeType] required=['DateRange']
+      * DateRange: object 
+  * DividendIncUs115BBDA: DateRangeTypeOS 
+  * DividendIncUs115BBDAaiii: DateRangeTypeOS 
+  * DividendIncUs115A1ai: DateRangeTypeOS 
+    DividendIncUs115A1aA: DateRangeType 
+  * DividendIncUs115AC: DateRangeTypeOS 
+  * DividendIncUs115ACA: DateRangeTypeOS 
+  * DividendIncUs115AD1i: DateRangeTypeOS 
+  * NOT89A: DateRangeTypeOS 
+  * DividendDTAA: DateRangeTypeOS 
+
+## ScheduleVIA
+[ScheduleVIA] required=['DeductUndChapVIA', 'UsrDeductUndChapVIA']
+  * UsrDeductUndChapVIA: UsrDeductUndChapVIA 
+    [UsrDeductUndChapVIA] required=['TotPartBchapterVIA', 'TotPartCAandDchapterVIA', 'TotPartCchapterVIA', 'TotalChapVIADeductions']
+        Section80C: integer 
+        Section80CCC: integer 
+        PensionContribution80CCC: array 
+        Section80CCDEmployeeOrSE: integer 
+        Section80CCD1B: integer 
+        Section80CCDEmployer: integer 
+        PRANDtls: array 
+        Section80D: integer 
+        Section80DD: integer 
+        Section80DDBUsrType: enum:['1', '2'] 
+        NameOfSpecDisease80DDB: enum:['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'] 
+        Section80DDB: integer 
+        Section80E: integer 
+        Section80EE: integer 
+        Section80EEA: integer 
+        Section80EEB: integer 
+        Section80G: integer 
+        Section80GG: integer 
+        Form10BAAckNum: string 
+        Section80GGA: integer 
+        Section80GGC: integer 
+      * TotPartBchapterVIA: integer 
+        Section80IA: integer 
+        Section80IAB: integer 
+        Section80IB: integer 
+        Section80IBA: integer 
+        Section80IC: integer 
+        Section80JJA: integer 
+        Section80JJAA: integer 
+        Section80QQB: integer 
+        Form10CCDAckNum: string 
+        Section80RRB: integer 
+        Form10CCEAckNum: string 
+      * TotPartCchapterVIA: integer 
+        Section80TTA: integer 
+        Section80TTB: integer 
+        Section80U: integer 
+        AnyOthSec80CCH: integer 
+      * TotPartCAandDchapterVIA: integer 
+      * TotalChapVIADeductions: integer 
+  * DeductUndChapVIA: DeductUndChapVIA 
+    [DeductUndChapVIA] required=['TotPartBchapterVIA', 'TotPartCAandDchapterVIA', 'TotPartCchapterVIA', 'TotalChapVIADeductions']
+        Section80C: integer 
+        Section80CCC: integer 
+        Section80CCDEmployeeOrSE: integer 
+        Section80CCD1B: integer 
+        Section80CCDEmployer: integer 
+        Section80D: integer 
+        Section80DD: integer 
+        Section80DDB: integer 
+        Section80E: integer 
+        Section80EE: integer 
+        Section80EEA: integer 
+        Section80EEB: integer 
+        Section80G: integer 
+        Section80GG: integer 
+        Section80GGA: integer 
+        Section80GGC: integer 
+      * TotPartBchapterVIA: integer 
+        Section80IA: integer 
+        Section80IAB: integer 
+        Section80IB: integer 
+        Section80IBA: integer 
+        Section80IC: integer 
+        Section80JJA: integer 
+        Section80JJAA: integer 
+        Section80QQB: integer 
+        Section80RRB: integer 
+      * TotPartCchapterVIA: integer 
+        Section80TTA: integer 
+        Section80TTB: integer 
+        Section80U: integer 
+        AnyOthSec80CCH: integer 
+      * TotPartCAandDchapterVIA: integer 
+      * TotalChapVIADeductions: integer 
+
+## ScheduleIT
+[ScheduleIT] required=['TotalTaxPayments']
+    TaxPayment: array 
+  * TotalTaxPayments: integer 
+
+## ScheduleTDS1
+[ScheduleTDS1] required=['TotalTDSonSalaries']
+    TDSonSalary: array 
+  * TotalTDSonSalaries: integer 
+
+## ScheduleTDS2
+[ScheduleTDS2] required=['TotalTDSonOthThanSals']
+    TDSOthThanSalaryDtls: array 
+  * TotalTDSonOthThanSals: integer 
+
+## ScheduleTDS3
+[ScheduleTDS3] required=['TotalTDS3OnOthThanSal']
+    TDS3onOthThanSalDtls: array 
+  * TotalTDS3OnOthThanSal: integer 
+
+## ScheduleTCS
+[ScheduleTCS] required=['TotalSchTCS']
+    TCS: array 
+  * TotalSchTCS: integer 
+
+## ScheduleFA
+[ScheduleFA] required=[]
+    DetailsForiegnBank: array 
+    DtlsForeignCustodialAcc: array 
+    DtlsForeignEquityDebtInterest: array 
+    DtlsForeignCashValueInsurance: array 
+    DetailsFinancialInterest: array 
+    DetailsImmovableProperty: array 
+    DetailsOthAssets: array 
+    DetailsOfAccntsHvngSigningAuth: array 
+    DetailsOfTrustOutIndiaTrustee: array 
+    DetailsOfOthSourcesIncOutsideIndia: array 
+
+## ScheduleAL
+[ScheduleAL] required=['InterstAOPFlag', 'LiabilityInRelatAssets', 'MovableAsset']
+    ImmovableDetails: array 
+  * MovableAsset: MovableAsset 
+    [MovableAsset] required=['ArchCollDrawPaintSulpArt', 'CashInHand', 'DepositsInBank', 'InsurancePolicies', 'JewelleryBullionEtc', 'LoansAndAdvancesGiven', 'SharesAndSecurities', 'VehiclYachtsBoatsAircrafts']
+      * DepositsInBank: integer 
+      * SharesAndSecurities: integer 
+      * InsurancePolicies: integer 
+      * LoansAndAdvancesGiven: integer 
+      * CashInHand: integer 
+      * JewelleryBullionEtc: integer 
+      * ArchCollDrawPaintSulpArt: integer 
+      * VehiclYachtsBoatsAircrafts: integer 
+  * InterstAOPFlag: enum:['Y', 'N'] 
+    InterestHeldInaAsset: array 
+  * LiabilityInRelatAssets: integer 
+
+## ScheduleGST
+[ScheduleGST] required=[]
+    TurnoverGrsRcptForGSTIN: array 

@@ -1,0 +1,27 @@
+{
+  "assessee": "Rohan Mehta",
+  "pan": "RMEHT1234A",
+  "ay": "2026-27",
+  "salary": [
+    {
+      "deductor": "Nova Packaging Pvt Ltd",
+      "amount": 420000,
+      "tds": 10000
+    }
+  ],
+  "interest": [
+    {
+      "bank": "HDFC Bank",
+      "amount": 24500
+    }
+  ],
+  "tds_other": [],
+  "capital_gains_hint": [
+    {
+      "type": "equity_112A",
+      "note": "See AIS table; broker statement primary"
+    }
+  ],
+  "foreign_assets": [],
+  "note": "Synthetic AIS export for demo"
+}

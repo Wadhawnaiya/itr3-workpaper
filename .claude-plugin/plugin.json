@@ -1,0 +1,10 @@
+{
+  "name": "itr3-workpaper",
+  "version": "0.1.0",
+  "description": "Pre-filing first-pass ITR-3 workpaper generator for AY 2026-27 — schedule-by-schedule Word/HTML workpaper plus schema-validated e-filing JSON for CA/taxpayer review.",
+  "author": {
+    "name": "CA Shailesh S Wadhawaniya",
+    "url": "https://shaileshai.qzz.io/"
+  },
+  "keywords": ["itr-3", "income-tax", "workpaper", "india", "ay-2026-27", "e-filing"]
+}

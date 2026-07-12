@@ -1,0 +1,36 @@
+CLIENT PROFILE — SYNTHETIC DEMO (not a real person)
+====================================================
+Name: Rohan Mehta
+Father's Name: Suresh Mehta
+PAN: RMEHT1234A   (format-valid fictional — for demo only)
+DOB: 15-Mar-1988
+Status: Individual (Resident and Ordinarily Resident)
+Address: 42, Palm Residency, Satellite, Ahmedabad, Gujarat 380015
+Mobile: 9876543210
+Email: rohan.mehta.demo@example.com
+Aadhaar: [NOT PROVIDED — do not invent]
+
+Business: Proprietorship "Mehta Trading Co." — wholesale trading of packaging materials
+GSTIN: 24RMEHT1234A1Z5 (fictional)
+Nature: Trading (no manufacturing)
+Books of account: Maintained (mercantile)
+Tax audit u/s 44AB: Not applicable (turnover below audit threshold on cash-light basis — CA to reconfirm)
+Partner in firm: No
+Director in company: No
+Foreign assets: NONE (explicit)
+Tax regime: NEW REGIME (Sec 115BAC) — client email confirmation 10-Apr-2026
+  NOTE: Client still sent 80C LIC + ELSS folder — skill must FLAG regime vs deduction conflict.
+
+Previous year: 01-Apr-2025 to 31-Mar-2026
+Assessment year: 2026-27
+Filing: Original u/s 139(1) expected
+
+House property: One self-occupied flat (Ahmedabad) with home loan
+Salary: Part-time consulting salary from "Nova Packaging Pvt Ltd" (small Form 16)
+Capital gains: Equity delivery trades (112A) via Zerodha-like broker
+Bank: HDFC savings + current (business)
+
+Carry forward: Client claims business loss b/f Rs. 45,000 from AY 2025-26 — 
+  prior-year ITR PDF not in folder (incomplete support).
+
+Verification: To be signed by assessee (Self). Do not auto-complete DSC.
